@@ -45,9 +45,21 @@ for kanji, svg_data in tqdm(kanji_svg_paths.items(), desc='Converting SVG to PNG
     svg_data = svg_data.replace('ns0', 'kvg')
     svg_data = svg_head + svg_data + svg_tail
     png_data = svg2png(bytestring=svg_data.encode('utf-8'), output_width=500, output_height=500)
-    img_name = "_".join(kanji_info[kanji]['meanings'])
-    img_name = re.sub(r'[^\w\s]', '', img_name)
-    # Convert PNG data to an image for viewing
+    all_meaning = []
+    for meaning in tqdm(kanji_info[kanji]['meanings'], leave=False):
+        meaning = re.sub(r'[^\w\s]', '', meaning)
+        img_name = meaning
+        all_meaning.append(meaning)
+        # Convert PNG data to an image for viewing
+        os.makedirs('data/kanji_images', exist_ok=True)
+        try:
+            image = Image.open(io.BytesIO(png_data))
+            # image.show()
+            image.save(f'data/kanji_images/{img_name}.png')  # Save the image to a file
+        except Exception as e:
+            print(f'Error saving {kanji_info[kanji]['kanji']}: {img_name}.png to PNG: {e}')
+            continue
+    img_name = "<w>".join(all_meaning)
     os.makedirs('data/kanji_images', exist_ok=True)
     try:
         image = Image.open(io.BytesIO(png_data))
