@@ -1,0 +1,1 @@
+{"train_loss": NaN, "_timestamp": 1708828213.1951358, "_runtime": 1145.5936658382416, "_step": 1338, "validation": {"_type": "images/separated", "width": 512, "height": 512, "format": "png", "count": 1, "filenames": ["media/images/validation_368_c1a8eac0e7f371b5cbb3.png"], "captions": ["0: Gundam"]}

@@ -1,0 +1,1 @@
+{"train_loss": 5.2883576699969126e-05, "_timestamp": 1708792056.003799, "_runtime": 8547.404213905334, "_step": 6500, "validation": {"_type": "images/separated", "width": 512, "height": 512, "format": "png", "count": 1, "filenames": ["media/images/validation_5888_81df12921ff387c1a5c0.png"], "captions": ["0: Gundam"]}, "_wandb": {"runtime": 8583}}

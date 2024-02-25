@@ -1,0 +1,240 @@
+02/24/2024 17:31:37 - INFO - __main__ - ***** Running training *****
+02/24/2024 17:31:37 - INFO - __main__ -   Num examples = 1469
+02/24/2024 17:31:37 - INFO - __main__ -   Num Epochs = 41
+02/24/2024 17:31:37 - INFO - __main__ -   Instantaneous batch size per device = 1
+02/24/2024 17:31:37 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 4
+02/24/2024 17:31:37 - INFO - __main__ -   Gradient Accumulation steps = 4
+02/24/2024 17:31:37 - INFO - __main__ -   Total optimization steps = 15000
+Steps:   0%|                                                                                          | 0/15000 [00:02<?, ?it/s, lr=1e-5, step_loss=0.00021]/lab/mydcxiao/anaconda3/envs/diffuser/lib/python3.12/site-packages/transformers/deepspeed.py:23: FutureWarning: transformers.deepspeed module is deprecated and will be removed in a future version. Please import deepspeed modules directly from transformers.integrations
+  warnings.warn(
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:   2%|█▉                                                                           | 368/15000 [05:21<2:51:36,  1.42it/s, lr=1e-5, step_loss=0.000166]02/24/2024 17:37:01 - INFO - __main__ - Running validation...
+{'requires_safety_checker', 'image_encoder'} was not found in config. Values will be initialized to default values.
+                                                                                                                                                            {'timestep_spacing', 'prediction_type'} was not found in config. Values will be initialized to default values.
+Loaded scheduler as PNDMScheduler from `scheduler` subfolder of CompVis/stable-diffusion-v1-4.                                        | 0/6 [00:00<?, ?it/s]
+Loaded feature_extractor as CLIPImageProcessor from `feature_extractor` subfolder of CompVis/stable-diffusion-v1-4.
+Loading pipeline components...: 100%|████████████████████████████████████████████████████████████████████████████████████████| 6/6 [00:00<00:00, 496.73it/s]
+You have disabled the safety checker for <class 'diffusers.pipelines.stable_diffusion.pipeline_stable_diffusion.StableDiffusionPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps:   3%|██▌                                                                           | 494/15000 [07:16<3:28:58,  1.16it/s, lr=1e-5, step_loss=6.54e-5]Traceback (most recent call last):
+  File "/lab/mydcxiao/SD_Kanji/train_kanji.py", line 1087, in <module>
+    main()
+  File "/lab/mydcxiao/SD_Kanji/train_kanji.py", line 978, in main
+    ema_unet.step(unet.parameters())
+  File "/lab/mydcxiao/anaconda3/envs/diffuser/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lab/mydcxiao/anaconda3/envs/diffuser/lib/python3.12/site-packages/diffusers/training_utils.py", line 326, in step
+    s_param.sub_(one_minus_decay * (s_param - param))
+KeyboardInterrupt

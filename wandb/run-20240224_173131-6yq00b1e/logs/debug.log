@@ -1,0 +1,28 @@
+2024-02-24 17:31:31,780 INFO    MainThread:72536 [wandb_setup.py:_flush():76] Current SDK version is 0.16.3
+2024-02-24 17:31:31,780 INFO    MainThread:72536 [wandb_setup.py:_flush():76] Configure stats pid to 72536
+2024-02-24 17:31:31,780 INFO    MainThread:72536 [wandb_setup.py:_flush():76] Loading settings from /lab/mydcxiao/.config/wandb/settings
+2024-02-24 17:31:31,780 INFO    MainThread:72536 [wandb_setup.py:_flush():76] Loading settings from /lab/mydcxiao/SD_Kanji/wandb/settings
+2024-02-24 17:31:31,780 INFO    MainThread:72536 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2024-02-24 17:31:31,780 INFO    MainThread:72536 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2024-02-24 17:31:31,780 INFO    MainThread:72536 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'train_kanji.py', 'program_abspath': '/lab/mydcxiao/SD_Kanji/train_kanji.py', 'program': '/lab/mydcxiao/SD_Kanji/train_kanji.py'}
+2024-02-24 17:31:31,780 INFO    MainThread:72536 [wandb_init.py:_log_setup():526] Logging user logs to /lab/mydcxiao/SD_Kanji/wandb/run-20240224_173131-6yq00b1e/logs/debug.log
+2024-02-24 17:31:31,780 INFO    MainThread:72536 [wandb_init.py:_log_setup():527] Logging internal logs to /lab/mydcxiao/SD_Kanji/wandb/run-20240224_173131-6yq00b1e/logs/debug-internal.log
+2024-02-24 17:31:31,780 INFO    MainThread:72536 [wandb_init.py:init():566] calling init triggers
+2024-02-24 17:31:31,780 INFO    MainThread:72536 [wandb_init.py:init():573] wandb.init called with sweep_config: {}
+config: {}
+2024-02-24 17:31:31,780 INFO    MainThread:72536 [wandb_init.py:init():616] starting backend
+2024-02-24 17:31:31,780 INFO    MainThread:72536 [wandb_init.py:init():620] setting up manager
+2024-02-24 17:31:31,781 INFO    MainThread:72536 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-02-24 17:31:31,785 INFO    MainThread:72536 [wandb_init.py:init():628] backend started and connected
+2024-02-24 17:31:31,787 INFO    MainThread:72536 [wandb_init.py:init():720] updated telemetry
+2024-02-24 17:31:31,802 INFO    MainThread:72536 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2024-02-24 17:31:32,270 INFO    MainThread:72536 [wandb_run.py:_on_init():2262] communicating current version
+2024-02-24 17:31:32,299 INFO    MainThread:72536 [wandb_run.py:_on_init():2271] got version response 
+2024-02-24 17:31:32,299 INFO    MainThread:72536 [wandb_init.py:init():804] starting run threads in backend
+2024-02-24 17:31:37,768 INFO    MainThread:72536 [wandb_run.py:_console_start():2241] atexit reg
+2024-02-24 17:31:37,768 INFO    MainThread:72536 [wandb_run.py:_redirect():2096] redirect: wrap_raw
+2024-02-24 17:31:37,768 INFO    MainThread:72536 [wandb_run.py:_redirect():2161] Wrapping output streams.
+2024-02-24 17:31:37,768 INFO    MainThread:72536 [wandb_run.py:_redirect():2186] Redirects installed.
+2024-02-24 17:31:37,769 INFO    MainThread:72536 [wandb_init.py:init():847] run started, returning control to user process
+2024-02-24 17:31:37,769 INFO    MainThread:72536 [wandb_run.py:_config_callback():1343] config_cb None None {'input_perturbation': 0, 'pretrained_model_name_or_path': 'CompVis/stable-diffusion-v1-4', 'revision': None, 'variant': None, 'dataset_name': None, 'dataset_config_name': None, 'train_data_dir': 'data/kanji_images', 'image_column': 'image', 'caption_column': 'text', 'max_train_samples': None, 'output_dir': '/lab/tmpig7b/u/yxiao-data/sd_kanji', 'cache_dir': None, 'seed': None, 'resolution': 512, 'center_crop': True, 'random_flip': True, 'train_batch_size': 1, 'num_train_epochs': 41, 'max_train_steps': 15000, 'gradient_accumulation_steps': 4, 'gradient_checkpointing': True, 'learning_rate': 1e-05, 'scale_lr': False, 'lr_scheduler': 'constant', 'lr_warmup_steps': 0, 'snr_gamma': None, 'use_8bit_adam': False, 'allow_tf32': False, 'use_ema': True, 'non_ema_revision': None, 'dataloader_num_workers': 0, 'adam_beta1': 0.9, 'adam_beta2': 0.999, 'adam_weight_decay': 0.01, 'adam_epsilon': 1e-08, 'max_grad_norm': 1.0, 'push_to_hub': True, 'hub_token': None, 'prediction_type': None, 'hub_model_id': None, 'logging_dir': 'logs', 'mixed_precision': 'fp16', 'report_to': 'wandb', 'local_rank': -1, 'checkpointing_steps': 5000, 'checkpoints_total_limit': None, 'resume_from_checkpoint': None, 'enable_xformers_memory_efficient_attention': False, 'noise_offset': 0, 'validation_epochs': 5, 'tracker_project_name': 'sd_kanji'}
+2024-02-24 17:39:00,211 WARNING MsgRouterThr:72536 [router.py:message_loop():77] message_loop has been closed
