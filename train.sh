@@ -5,6 +5,7 @@ export VAL_PROMPT="Gundam"
 # export HUB_TOKEN="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"
 # export HUB_MODEL_ID="sd_kanji"
 export OUTPUT_DIR="/lab/tmpig7b/u/yxiao-data/sd_kanji"
+# export RESUME="/lab/tmpig7b/u/yxiao-data/sd_kanji/checkpoint-40000"
 
 accelerate launch --mixed_precision="fp16"  train_kanji.py \
   --pretrained_model_name_or_path=$MODEL_NAME \
@@ -25,6 +26,7 @@ accelerate launch --mixed_precision="fp16"  train_kanji.py \
   --push_to_hub \
   --checkpointing_steps=5000 \
   --validation_epochs=1 \
+  --resume_from_checkpoint="latest" \
 #   --enable_xformers_memory_efficient_attention \
 #   --hub_token="$HUB_TOKEN" \
 #   --hub_model_id="$HUB_MODEL_ID" \
