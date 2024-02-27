@@ -2,10 +2,10 @@ export CUDA_VISIBLE_DEVICES=0
 export MODEL_NAME="CompVis/stable-diffusion-v1-4"
 export TRAIN_DIR="data/kanji_images"
 export VAL_PROMPT="abandon"
+export OUTPUT_DIR="/lab/tmpig7b/u/yxiao-data/sd_kanji"
 # export HUB_TOKEN="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"
 # export HUB_MODEL_ID="sd_kanji"
 # export RESUME="/lab/tmpig7b/u/yxiao-data/sd_kanji/checkpoint-40000"
-export OUTPUT_DIR="/lab/tmpig7b/u/yxiao-data/sd_kanji"
 
 accelerate launch --mixed_precision="fp16"  train_kanji.py \
   --pretrained_model_name_or_path=$MODEL_NAME \
