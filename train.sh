@@ -27,9 +27,9 @@ accelerate launch --mixed_precision="fp16"  train_kanji.py \
   --push_to_hub \
   --checkpointing_steps=5000 \
   --validation_epochs=1 \
-  --enable_xformers_memory_efficient_attention \
   --use_8bit_adam \
   --from_scratch \
   # --resume_from_checkpoint="latest" \
+  # --enable_xformers_memory_efficient_attention \
 #   --hub_token="$HUB_TOKEN" \
 #   --hub_model_id="$HUB_MODEL_ID" \
