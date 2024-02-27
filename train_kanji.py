@@ -591,10 +591,16 @@ def main():
         vae = AutoencoderKL.from_pretrained(
             args.pretrained_model_name_or_path, subfolder="vae", revision=args.revision, variant=args.variant
         )
-
-    unet = UNet2DConditionModel.from_pretrained(
-        args.pretrained_model_name_or_path, subfolder="unet", revision=args.non_ema_revision
-    )
+    
+    if not args.from_scratch:
+        unet = UNet2DConditionModel.from_pretrained(
+            args.pretrained_model_name_or_path, subfolder="unet", revision=args.non_ema_revision
+        )
+    else:
+        unet_config = UNet2DConditionModel.load_config(
+            args.pretrained_model_name_or_path, subfolder="unet", revision=args.non_ema_revision
+        )
+        unet = UNet2DConditionModel.from_config(unet_config)
 
     # Freeze vae and text_encoder and set unet to trainable
     vae.requires_grad_(False)
@@ -638,8 +644,7 @@ def main():
         def load_model_hook(models, input_dir):
             if args.use_ema:
                 load_model = EMAModel.from_pretrained(os.path.join(input_dir, "unet_ema"), UNet2DConditionModel)
-                if not args.from_scratch:
-                    ema_unet.load_state_dict(load_model.state_dict())
+                ema_unet.load_state_dict(load_model.state_dict())
                 ema_unet.to(accelerator.device)
                 del load_model
 
@@ -650,9 +655,8 @@ def main():
                 # load diffusers style into model
                 load_model = UNet2DConditionModel.from_pretrained(input_dir, subfolder="unet")
                 model.register_to_config(**load_model.config)
-                
-                if not args.from_scratch:
-                    model.load_state_dict(load_model.state_dict())
+
+                model.load_state_dict(load_model.state_dict())
                 del load_model
 
         accelerator.register_save_state_pre_hook(save_model_hook)
