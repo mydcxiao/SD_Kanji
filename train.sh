@@ -11,11 +11,11 @@ accelerate launch --mixed_precision="fp16"  train_kanji.py \
   --pretrained_model_name_or_path=$MODEL_NAME \
   --train_data_dir=$TRAIN_DIR \
   --use_ema \
-  --resolution=128 \
+  --resolution=128 --center_crop \
   --train_batch_size=1 \
   --gradient_accumulation_steps=4 \
   --gradient_checkpointing \
-  --max_train_steps=100000 \
+  --max_train_steps=50000 \
   --snr_gamma=5.0 \
   --learning_rate=1e-05 \
   --max_grad_norm=1 \
