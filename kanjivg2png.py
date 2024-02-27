@@ -39,11 +39,12 @@ for kanji in tqdm(kanji_info.values(), desc='Mapping Kanji to SVG Paths'):
 # Transfer the SVG data to a PNG image
 kanji_head = r'<(/?)kanji[^>]*>'
 svg_head = '<svg xmlns:kvg="http://kanjivg.tagaini.net" width="109" height="109" style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;">'
+svg_bg = '<rect x="0" y="0" width="109" height="109" style="fill:#D3D3D3;stroke:none;"/>'
 svg_tail = '</svg>'
 for kanji, svg_data in tqdm(kanji_svg_paths.items(), desc='Converting SVG to PNG'):
     svg_data = re.sub(kanji_head, '', svg_data)
     svg_data = svg_data.replace('ns0', 'kvg')
-    svg_data = svg_head + svg_data + svg_tail
+    svg_data = svg_head + svg_bg + svg_data + svg_tail
     png_data = svg2png(bytestring=svg_data.encode('utf-8'), output_width=500, output_height=500)
     all_meaning = []
     for meaning in tqdm(kanji_info[kanji]['meanings'], leave=False):
