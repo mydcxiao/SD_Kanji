@@ -11,7 +11,7 @@ accelerate launch --mixed_precision="fp16"  train_kanji.py \
   --pretrained_model_name_or_path=$MODEL_NAME \
   --train_data_dir=$TRAIN_DIR \
   --use_ema \
-  --resolution=128 --center_crop \
+  --resolution=512 --center_crop \
   --train_batch_size=1 \
   --gradient_accumulation_steps=4 \
   --gradient_checkpointing \
@@ -24,12 +24,12 @@ accelerate launch --mixed_precision="fp16"  train_kanji.py \
   --validation_prompt="$VAL_PROMPT" \
   --report_to="wandb" \
   --tracker_project_name="sd_kanji" \
-  --push_to_hub \
   --checkpointing_steps=5000 \
   --validation_epochs=1 \
   --use_8bit_adam \
   --from_scratch \
   # --resume_from_checkpoint="latest" \
+  # --push_to_hub \
   # --enable_xformers_memory_efficient_attention \
 #   --hub_token="$HUB_TOKEN" \
 #   --hub_model_id="$HUB_MODEL_ID" \
