@@ -15,7 +15,7 @@ image_files = [f for f in os.listdir(image_folder) if os.path.isfile(os.path.joi
 with open(jsonl_file_path, 'w', encoding='utf-8') as jsonl_file:
     for image_file in image_files:
         # Create a caption based on the filename (you can modify this logic as needed)
-        caption = os.path.splitext(image_file)[0].replace('<w>', ', ')
+        caption = os.path.splitext(image_file)[0].split('<i>')[0].replace('<w>', ', ')
 
         # Create a JSON object for this image
         metadata = {

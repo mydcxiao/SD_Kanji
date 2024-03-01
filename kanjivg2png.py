@@ -41,6 +41,7 @@ kanji_head = r'<(/?)kanji[^>]*>'
 svg_head = '<svg xmlns:kvg="http://kanjivg.tagaini.net" width="109" height="109" style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;">'
 svg_bg = '<rect x="0" y="0" width="109" height="109" style="fill:#D3D3D3;stroke:none;"/>'
 svg_tail = '</svg>'
+uniq_names = dict()
 for kanji, svg_data in tqdm(kanji_svg_paths.items(), desc='Converting SVG to PNG'):
     svg_data = re.sub(kanji_head, '', svg_data)
     svg_data = svg_data.replace('ns0', 'kvg')
@@ -55,8 +56,9 @@ for kanji, svg_data in tqdm(kanji_svg_paths.items(), desc='Converting SVG to PNG
         os.makedirs('data/kanji_images', exist_ok=True)
         try:
             image = Image.open(io.BytesIO(png_data))
-            # image.show()
-            image.save(f'data/kanji_images/{img_name}.png')  # Save the image to a file
+            i = uniq_names.get(img_name, 0)
+            image.save(f'data/kanji_images/{img_name}<i>{i}.png')  # Save the image to a file
+            uniq_names[img_name] = i + 1
         except Exception as e:
             print(f'Error saving {kanji_info[kanji]['kanji']}: {img_name}.png to PNG: {e}')
             continue
@@ -64,8 +66,9 @@ for kanji, svg_data in tqdm(kanji_svg_paths.items(), desc='Converting SVG to PNG
     os.makedirs('data/kanji_images', exist_ok=True)
     try:
         image = Image.open(io.BytesIO(png_data))
-        # image.show()
-        image.save(f'data/kanji_images/{img_name}.png')  # Save the image to a file
+        i = uniq_names.get(img_name, 0)
+        image.save(f'data/kanji_images/{img_name}<i>{i}.png')  # Save the image to a file
+        uniq_names[img_name] = i + 1
     except Exception as e:
         print(f'Error saving {kanji_info[kanji]['kanji']}: {img_name}.png to PNG: {e}')
         continue
