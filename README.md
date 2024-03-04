@@ -2,6 +2,8 @@
 
 Finetune/train a stable diffusion model using Kanji image dictionary to let it generate novel Kanjis.
 
+Feel free to get my own [trained weights](https://huggingface.co/mydcxiao/SD_Kanji) with the same configuration as [Stable Diffusion v1.4](https://huggingface.co/CompVis/stable-diffusion-v1-4).
+
 ## Dataset
 
 KANJIDIC2 is a Kanji dictionary using a combination of .xml and .svg images to describe Kanjis.
@@ -52,3 +54,14 @@ accelerate launch --mixed_precision="fp16"  train_kanji.py \
 ----------
 
 ## Testing
+
+Replace the prompt with whatever you like.
+
+```shell
+python  test_kanji.py \
+  --model_path="$MODEL_PATH" \
+  --output_dir="$OUTPUT_DIR" \
+  --prompt="$PROMPT" \
+  --num_images=$NUM_IMAGES \
+  --checkpoint=$CHECKPOINT
+```
