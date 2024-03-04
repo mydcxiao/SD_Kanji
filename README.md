@@ -3,6 +3,7 @@
 ![train](assets/train-vs-gt.png)
 
 Real images (above) vs. Generated images (below)
+
 ![fake](assets/fake_kanji.png)
 
 Fake images by prompting with English words
