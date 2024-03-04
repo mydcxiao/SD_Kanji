@@ -15,7 +15,7 @@ accelerate launch --mixed_precision="fp16"  train_kanji.py \
   --train_batch_size=1 \
   --gradient_accumulation_steps=4 \
   --gradient_checkpointing \
-  --max_train_steps=200000 \
+  --max_train_steps=300000 \
   --snr_gamma=5.0 \
   --learning_rate=1e-05 \
   --max_grad_norm=1 \
@@ -28,7 +28,7 @@ accelerate launch --mixed_precision="fp16"  train_kanji.py \
   --validation_epochs=1 \
   --use_8bit_adam \
   --from_scratch \
-  # --resume_from_checkpoint="latest" \
+  --resume_from_checkpoint="latest" \
   # --push_to_hub \
   # --enable_xformers_memory_efficient_attention \
 #   --hub_token="$HUB_TOKEN" \

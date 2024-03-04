@@ -1,7 +1,7 @@
+import os
+import argparse
 import torch
 from diffusers import StableDiffusionPipeline, UNet2DConditionModel
-
-import argparse
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Test Kanji')
@@ -12,9 +12,9 @@ def parse_args():
     
     parser.add_argument('--num_images', type=int, default=10)
     
-    parser.add_argument('--output_path', type=str, default='outputs/')
+    parser.add_argument('--output_dir', type=str, default='outputs/')
     
-    parser.add_argument('--checkpoint', action=int, default=0)
+    parser.add_argument('--checkpoint', type=int, default=0)
     
     args = parser.parse_args()
 
@@ -22,6 +22,8 @@ def parse_args():
 
 def main():
     args = parse_args()
+    
+    os.makedirs(f'{args.output_dir}', exist_ok=True)
     
     if args.checkpoint:
         model_path = args.model_path
@@ -32,7 +34,7 @@ def main():
 
         for i in range(args.num_images):
             image = pipe(prompt=args.prompt).images[0]
-            image.save(f"{args.prompt}_{i}.png")
+            image.save(f"{args.output_dir}/{args.prompt}_{i}.png")
     
     else:
         model_path = args.model_path
@@ -41,7 +43,7 @@ def main():
 
         for i in range(args.num_images):
             image = pipe(prompt=args.prompt).images[0]
-            image.save(f"{args.prompt}_{i}.png")
+            image.save(f"{args.output_dir}/{args.prompt}_{i}.png")
 
 
 if __name__ == '__main__':
