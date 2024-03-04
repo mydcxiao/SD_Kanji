@@ -1,7 +1,9 @@
 # Stable Diffusion Hallucinating Kanji
 
 ![train](assets/train-vs-gt.png)
+Real images (above) vs. Generated images (below)
 ![fake](assets/fake_kanji.png)
+Fake images by prompting with English words
 
 Finetune/train a stable diffusion model using Kanji image dictionary to let it generate novel Kanjis.
 
