@@ -1,14 +1,13 @@
 # Stable Diffusion Hallucinating Kanji
 
-![train](assets/train-vs-gt.png)
-
-Real images (above) vs. Generated images (below)
-
-![fake](assets/fake_kanji.png)
-
-Fake images by prompting with English words
-
 Finetune/train a stable diffusion model using Kanji image dictionary to let it generate novel Kanjis.
+
+<figure>
+  <img src="assets/train-vs-gt.png" alt="Alt text" style="width:100%;">
+  <figcaption>Real images (above) vs. Generated images (below)</figcaption>
+  <img src="assets/fake_kanji.png" alt="Alt text" style="width:100%;">
+  <figcaption>Fake images by prompting with English words</figcaption>
+</figure>
 
 Feel free to get my own [trained weights](https://huggingface.co/mydcxiao/SD_Kanji) with the same configuration as [Stable Diffusion v1.4](https://huggingface.co/CompVis/stable-diffusion-v1-4).
 
