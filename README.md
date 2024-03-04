@@ -6,7 +6,15 @@ Finetune/train a stable diffusion model using Kanji image dictionary to let it g
 
 -------------
 
+## Environment
+
+Refer to the requirements of huggingface [diffusers](https://github.com/huggingface/diffusers/tree/main) and its [text-to-image](https://github.com/huggingface/diffusers/tree/main/examples/text_to_image).
+
+-------------
+
 ## Training 
+
+`--from_scratch` will train a unet from scratch, remove it if you just want to finetune the model.
 
 ```shell
 accelerate launch --mixed_precision="fp16"  train_kanji.py \
