@@ -4,6 +4,14 @@ Finetune/train a stable diffusion model using Kanji image dictionary to let it g
 
 ## Dataset
 
+KANJIDIC2 is a Kanji dictionary using a combination of .xml and .svg images to describe Kanjis.
+Here are links to download the dataset.
+- [KANJIDIC2](https://www.edrdg.org/kanjidic/kanjidic2.xml.gz&sa=D&source=docs&ust=1709571624986792&usg=AOvVaw26FhklH0nI05XrvcVTEf-I)
+- [KANJIVG](https://github.com/KanjiVG/kanjivg/releases/download/r20220427/kanjivg-20220427.xml.gz)
+- [original links](https://github.com/Gnurou/tagainijisho/blob/master/src/core/kanjidic2/CMakeLists.txt)
+
+Refer to [kanjivg2png.py](kanjivg2png.py) and [create_jsonl.py](create_jsonl.py) to see how I preprocessing the data. Better way indeed exists.
+
 -------------
 
 ## Environment
