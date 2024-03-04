@@ -29,7 +29,7 @@ def main():
         model_path = args.model_path
         unet = UNet2DConditionModel.from_pretrained(model_path + f"/checkpoint-{args.checkpoint}/unet", torch_dtype=torch.float16)
 
-        pipe = StableDiffusionPipeline.from_pretrained("<initial model>", unet=unet, torch_dtype=torch.float16)
+        pipe = StableDiffusionPipeline.from_pretrained(model_path, unet=unet, torch_dtype=torch.float16)
         pipe.to("cuda")
 
         for i in range(args.num_images):
