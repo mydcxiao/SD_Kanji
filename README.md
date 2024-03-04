@@ -2,3 +2,37 @@
 
 Finetune/train a stable diffusion model using Kanji image dictionary to let it generate novel Kanjis.
 
+## Dataset
+
+-------------
+
+## Training 
+
+```shell
+accelerate launch --mixed_precision="fp16"  train_kanji.py \
+  --pretrained_model_name_or_path=$MODEL_NAME \
+  --train_data_dir=$TRAIN_DIR \
+  --use_ema \
+  --resolution=512 --center_crop \
+  --train_batch_size=1 \
+  --gradient_accumulation_steps=4 \
+  --gradient_checkpointing \
+  --max_train_steps=300000 \
+  --snr_gamma=5.0 \
+  --learning_rate=1e-05 \
+  --max_grad_norm=1 \
+  --lr_scheduler="constant" --lr_warmup_steps=0 \
+  --output_dir="$OUTPUT_DIR" \
+  --validation_prompt="$VAL_PROMPT" \
+  --report_to="wandb" \
+  --tracker_project_name="sd_kanji" \
+  --checkpointing_steps=50000 \
+  --validation_epochs=1 \
+  --use_8bit_adam \
+  --from_scratch \
+  --resume_from_checkpoint="latest"
+```
+
+----------
+
+## Testing
