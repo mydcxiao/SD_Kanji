@@ -1,5 +1,8 @@
 # Stable Diffusion Hallucinating Kanji
 
+![assets/train-vs-gt.png]
+![assets/fake_kanji.png]
+
 Finetune/train a stable diffusion model using Kanji image dictionary to let it generate novel Kanjis.
 
 Feel free to get my own [trained weights](https://huggingface.co/mydcxiao/SD_Kanji) with the same configuration as [Stable Diffusion v1.4](https://huggingface.co/CompVis/stable-diffusion-v1-4).
