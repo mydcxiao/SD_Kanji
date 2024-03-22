@@ -18,7 +18,7 @@ Here are links to download the dataset.
 - [KANJIVG](https://github.com/KanjiVG/kanjivg/releases/download/r20220427/kanjivg-20220427.xml.gz)
 - [original links](https://github.com/Gnurou/tagainijisho/blob/master/src/core/kanjidic2/CMakeLists.txt)
 
-Run [kanjivg2png.py](kanjivg2png.py) to transfer .svg images to .png
+Run [kanjivg2png.py](kanjivg2png.py) to transfer .svg images to .png images and save them into `data/kanji_images/` folder.
 ```shell
 python kanjivg2png.py
 ```
@@ -33,7 +33,7 @@ Refer to [kanjivg2png.py](kanjivg2png.py) and [create_jsonl.py](create_jsonl.py)
 
 ## Environment
 
-Refer to the requirements of huggingface [diffusers](https://github.com/huggingface/diffusers/tree/main) and its [text-to-image](https://github.com/huggingface/diffusers/tree/main/examples/text_to_image).
+Refer to the requirements of huggingface [diffusers](https://github.com/huggingface/diffusers/tree/main) and its [text-to-image](https://github.com/huggingface/diffusers/tree/main/examples/text_to_image) pipelines.
 
 -------------
 
