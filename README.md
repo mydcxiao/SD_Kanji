@@ -18,7 +18,16 @@ Here are links to download the dataset.
 - [KANJIVG](https://github.com/KanjiVG/kanjivg/releases/download/r20220427/kanjivg-20220427.xml.gz)
 - [original links](https://github.com/Gnurou/tagainijisho/blob/master/src/core/kanjidic2/CMakeLists.txt)
 
-Refer to [kanjivg2png.py](kanjivg2png.py) and [create_jsonl.py](create_jsonl.py) to see how I preprocessing the data. Better way indeed exists.
+Run [kanjivg2png.py](kanjivg2png.py) to transfer .svg images to .png
+```shell
+python kanjivg2png.py
+```
+Run [create_jsonl.py](create_jsonl.py) to create an image dataset with captions based on huggingface [datasets](https://github.com/huggingface/datasets).
+```shell
+python create_jsonl.py
+```
+
+Refer to [kanjivg2png.py](kanjivg2png.py) and [create_jsonl.py](create_jsonl.py) for details.
 
 -------------
 
